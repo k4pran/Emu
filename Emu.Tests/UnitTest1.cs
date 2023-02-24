@@ -14,11 +14,9 @@ namespace Emu.Tests
         [Test]
         public void Test1()
         {
-            PdfReader pdfReader = new PdfReader();
             string baseDir = Environment.CurrentDirectory;
             string projectDir = Directory.GetParent(baseDir).Parent.Parent.FullName;
-            FileStream fileStream = File.OpenRead(Path.Combine(projectDir, "Resources", "dracula.pdf"));
-            pdfReader.Read(fileStream);
+            new PdfImageRenderer(projectDir);
             Assert.Pass();
         }
     }

@@ -8,7 +8,7 @@
         <ProjectGuid>{9B8619B0-D191-43C0-91CB-69A4574AF3D0}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>EmuFrame</RootNamespace>
+        <RootNamespace>Emu</RootNamespace>
         <AssemblyName>Emu</AssemblyName>
         <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
@@ -43,11 +43,11 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="IReader.cs" />
-        <Compile Include="PdfReader.cs" />
+        <Compile Include="IImageRenderer.cs" />
+        <Compile Include="PdfImageRenderer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Reader.cs" />
-        <Compile Include="TxtReader.cs" />
+        <Compile Include="ImageRenderer.cs" />
+        <Compile Include="TxtImageRenderer.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
