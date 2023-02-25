@@ -17,19 +17,22 @@ namespace Emu
         
         protected override void Read(FileStream fileStream)
         {
-            PdfDocument pdfDocument = PdfDocument.Load(fileStream);
-            Image img = pdfDocument.Render(2, 300, 300, true);
-            new Bitmap(img).Save("C:/Users/ryan/RiderProjects/Emu/Emu.Tests/Resources/output/test2.png", ImageFormat.Png);
+            _pdfDocument = PdfDocument.Load(fileStream);
         }
 
         public override Image AsImage(int index)
         {
-            throw new NotImplementedException();
+            return _pdfDocument.Render(index, 300, 300, true);
         }
 
         public override List<Image> AsImages()
         {
-            throw new NotImplementedException();
+            List<Image> images = new List<Image>();
+            for (int i = 0; i < _pdfDocument.PageCount; i++)
+            {
+                images.Add(_pdfDocument.Render(i, 300, 300, true));
+            }
+            return images;
         }
     }
 }

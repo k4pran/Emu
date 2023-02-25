@@ -16,8 +16,9 @@ namespace Emu.Tests
         {
             string baseDir = Environment.CurrentDirectory;
             string projectDir = Directory.GetParent(baseDir).Parent.Parent.FullName;
-            new PdfImageRenderer(projectDir);
-            Assert.Pass();
+            string filePath = Path.Combine(projectDir, "Resources", "dracula.pdf");
+            PdfImageRenderer pdfImageRenderer = new PdfImageRenderer(filePath);
+            Assert.NotNull(pdfImageRenderer.AsImage(0));
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Emu
     {
         protected ImageRenderer(string filePath)
         {
-            this.Read(filePath);
+            Read(filePath);
         }
 
         protected abstract void Read(FileStream fileStream);
